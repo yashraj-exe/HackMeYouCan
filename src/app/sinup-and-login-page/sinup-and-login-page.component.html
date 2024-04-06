@@ -1,0 +1,161 @@
+<body>
+  <canvas id="bg" #bg style="position: fixed; top: 0; left: 0;"> </canvas>
+  <div id="leader_board">
+    <a class="btn btn--svg js-animated-button" (click)="getLeaderBoard()">
+      <span class="btn--svg__label">Leader Board</span>
+      <svg class="btn--svg__circle" width="190" x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60">
+        <circle class="js-discover-circle" fill="#FFFFFF" cx="30" cy="30" r="28.7"></circle>
+      </svg>
+      <svg class="btn--svg__border" x="0px" y="0px" preserveaspectratio="none" viewBox="2 29.3 56.9 13.4"
+        enable-background="new 2 29.3 56.9 13.4" width="190">
+        <g class="btn--svg__border--left js-discover-left-border" id="Calque_2">
+          <path fill="none" stroke="#FFF" stroke-width="0.5" stroke-miterlimit="1"
+            d="M30.4,41.9H9c0,0-6.2-0.3-6.2-5.9S9,30.1,9,30.1h21.4"></path>
+        </g>
+        <g class="btn--svg__border--right js-discover-right-border" id="Calque_3">
+          <path fill="none" stroke="#FFF" stroke-width="0.5" stroke-miterlimit="1"
+            d="M30.4,41.9h21.5c0,0,6.1-0.4,6.1-5.9s-6-5.9-6-5.9H30.4"></path>
+        </g>
+      </svg>
+    </a>
+  </div>
+  <div class="glitch-wrapper">
+    <h1 class="glitch" data-glitch="Hack me if you can...!">Hack me if you can...!</h1>
+  </div>
+  <span class="container">
+    <p class="glitchh">
+      <span aria-hidden="true"></span>
+      Cyber Guards <br>
+      Society
+      <span aria-hidden="true"></span>
+    </p>
+  </span>
+  <div class="box">
+    <!-- <img src="../assets/Image/login-935679.png"> -->
+    <div class="page">
+      <div class="header">
+        <a id="login" [ngClass]="(!isSinupForm) ? 'active' : ''" (click)="isLogin()">login</a>
+        <a id="signup" [ngClass]="(isSinupForm) ? 'active' : ''" (click)="isSignup()">signup</a>
+      </div>
+      <div id="errorMsg"></div>
+      <div class="content">
+        <form class="login" *ngIf="!isSinupForm" [formGroup]="login">
+          <!-- <div class="glitch-wrapper">
+          <h1 class="glitch" data-glitch="Hack me if you can...!">Hack me if you can...!</h1>
+        </div> -->
+          <div>
+            <input type="email" required formControlName="email" name="email" id="logEmail" placeholder="Email ID">
+            <div class="errorMsg"
+              *ngIf="loginControls?.email?.invalid && (!loginControls?.email?.dirty || loginControls?.email?.touched)">
+              <span *ngIf="loginControls?.email?.errors['required']">
+                This field is required.
+              </span>
+            </div>
+            <div class="errorMsg"
+              *ngIf="loginControls?.email?.invalid && !loginControls?.email?.errors['required'] &&  loginControls?.email?.errors?.pattern">
+              Please enter valid last Name (Only for 25 letter).
+            </div>
+          </div>
+          <div>
+            <input type="password" formControlName="password" required name="password" id="logPassword"
+              placeholder="Password">
+            <div class="errorMsg"
+              *ngIf="loginControls?.password?.invalid && (!loginControls?.password?.dirty || loginControls?.password?.touched)">
+              <span *ngIf="loginControls?.password?.errors['required']">
+                This field is required.
+              </span>
+            </div>
+          </div>
+          <!-- <div id="check">
+                  <input type="checkbox" id="remember">
+                  <label for="remember">Remember me</label>
+              </div> -->
+          <br>
+          <br>
+          <div>
+            <input type="submit" value="Login" [disabled]=!login?.valid (click)="validateLoginForm(login?.value)">
+          </div>
+        </form>
+        <form class="signup" *ngIf="isSinupForm" [formGroup]="sinup">
+          <div>
+            <input type="text" formControlName="userName" required name="userName" id="signName" placeholder="Name">
+            <div class="errorMsg"
+              *ngIf="sinupControls.userName.invalid && (!sinupControls.userName.dirty || sinupControls.userName.touched)">
+              <span *ngIf="sinupControls.userName.errors['required']">
+                This field is required.
+              </span>
+            </div>
+            <div class="errorMsg"
+              *ngIf="sinupControls.userName.invalid && !sinupControls.userName.errors['required'] &&  sinupControls?.userName?.errors?.pattern">
+              Please enter valid last Name (Only for 25 letter).
+            </div>
+          </div>
+          <div>
+            <input type="email" formControlName="email" required name="email" id="signEmail" placeholder="Email ID">
+            <div class="errorMsg"
+              *ngIf="sinupControls?.email?.invalid && (!sinupControls?.email?.dirty || sinupControls?.email?.touched)">
+              <span *ngIf="sinupControls?.email?.errors['required']">
+                This field is required.
+              </span>
+            </div>
+            <div class="errorMsg"
+              *ngIf="sinupControls?.email?.invalid && !sinupControls?.email?.errors['required'] && sinupControls?.email?.errors?.pattern">
+              Please enter valid email.
+            </div>
+          </div>
+          <div>
+            <input type="number" class="number-input" required name="phone" formControlName="phone" id="signPhone"
+              placeholder="Phone Number">
+            <div class="errorMsg"
+              *ngIf="sinupControls?.phone?.invalid && (!sinupControls?.phone?.dirty || sinupControls?.phone?.touched)">
+              <span *ngIf="sinupControls?.phone?.errors['required']">
+                This field is required.
+              </span>
+            </div>
+            <div class="errorMsg"
+              *ngIf="sinupControls?.phone?.invalid && !sinupControls?.phone?.errors['required'] && sinupControls?.phone?.errors?.pattern">
+              Please enter valid number.
+            </div>
+          </div>
+          <div>
+            <input type="text" formControlName="section" required name="section" id="signSection" placeholder="Section">
+            <div class="errorMsg"
+              *ngIf="sinupControls?.section?.invalid && (!sinupControls?.section?.dirty || sinupControls?.section?.touched)">
+              <span *ngIf="sinupControls?.section?.errors['required']">
+                This field is required.
+              </span>
+            </div>
+          </div>
+          <div>
+            <input type="text" formControlName="rollno" required name="rollno" id="signRoll" placeholder="Roll Number">
+            <div class="errorMsg"
+              *ngIf="sinupControls?.rollno?.invalid && (!sinupControls?.rollno?.dirty || sinupControls?.rollno?.touched)">
+              <span *ngIf="sinupControls?.rollno?.errors['required']">
+                This field is required.
+              </span>
+            </div>
+          </div>
+          <div>
+            <input type="submit" [disabled]=!sinup?.valid (click)="validateSignupForm(sinup?.value)" value="SignUp">
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div id="snackbar">{{message}}</div>
+
+  <div id="credits">
+    <h1>System<span style="color:white;">.<span style="color:#e06c75;">out</span>.</span><span
+        style="color:#61afef;">println</span>("</h1>
+    <div class="string">
+      <h1 class="greeting en">Cyber</h1>
+      <h1 class="greeting es">Guards</h1>
+      <h1 class="greeting de">Society</h1>
+      <h1 class="greeting it">❤️</h1>
+    </div>
+    <h1 class="closure">");</h1>
+  </div>
+
+
+</body>
