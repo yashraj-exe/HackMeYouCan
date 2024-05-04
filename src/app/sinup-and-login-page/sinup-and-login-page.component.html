@@ -118,7 +118,7 @@
             </div>
           </div>
           <div>
-            <input type="text" formControlName="section" required name="section" id="signSection" placeholder="Section">
+            <input type="text" formControlName="section" required name="section" id="signSection" placeholder="Stream">
             <div class="errorMsg"
               *ngIf="sinupControls?.section?.invalid && (!sinupControls?.section?.dirty || sinupControls?.section?.touched)">
               <span *ngIf="sinupControls?.section?.errors['required']">
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div>
-            <input type="text" formControlName="rollno" required name="rollno" id="signRoll" placeholder="Roll Number">
+            <input type="text" formControlName="rollno" required name="rollno" id="signRoll" placeholder="Enrollment Number">
             <div class="errorMsg"
               *ngIf="sinupControls?.rollno?.invalid && (!sinupControls?.rollno?.dirty || sinupControls?.rollno?.touched)">
               <span *ngIf="sinupControls?.rollno?.errors['required']">
