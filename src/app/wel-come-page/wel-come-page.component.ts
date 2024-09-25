@@ -175,4 +175,8 @@ export class WelComePageComponent implements OnInit {
     }
   }
 
+  getLeaderBoard(){
+    this.router.navigateByUrl(`winer/all-winers-list`);
+  }
+
 }

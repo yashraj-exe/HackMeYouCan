@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
 
-  baseurl: 'http://13.233.159.68:3000/', //Prod
+  baseurl: 'http://13.201.119.210:3000/', //Prod
   //  baseurl: 'http://localhost:3000/', // Local
 };
 
