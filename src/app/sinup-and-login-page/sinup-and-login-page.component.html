@@ -44,7 +44,7 @@
           <h1 class="glitch" data-glitch="Hack me if you can...!">Hack me if you can...!</h1>
         </div> -->
           <div>
-            <input type="email" required formControlName="email" name="email" id="logEmail" placeholder="Email ID">
+            <input autocomplete="off" type="email" required formControlName="email" name="email" id="logEmail" placeholder="Email ID">
             <div class="errorMsg"
               *ngIf="loginControls?.email?.invalid && (!loginControls?.email?.dirty || loginControls?.email?.touched)">
               <span *ngIf="loginControls?.email?.errors['required']">
@@ -78,7 +78,7 @@
         </form>
         <form class="signup" *ngIf="isSinupForm" [formGroup]="sinup">
           <div>
-            <input type="text" formControlName="userName" required name="userName" id="signName" placeholder="Name">
+            <input type="text" autocomplete="off" formControlName="userName" required name="userName" id="signName" placeholder="Name">
             <div class="errorMsg"
               *ngIf="sinupControls.userName.invalid && (!sinupControls.userName.dirty || sinupControls.userName.touched)">
               <span *ngIf="sinupControls.userName.errors['required']">
@@ -91,7 +91,7 @@
             </div>
           </div>
           <div>
-            <input type="email" formControlName="email" required name="email" id="signEmail" placeholder="Email ID">
+            <input autocomplete="off" type="email" formControlName="email" required name="email" id="signEmail" placeholder="Email ID">
             <div class="errorMsg"
               *ngIf="sinupControls?.email?.invalid && (!sinupControls?.email?.dirty || sinupControls?.email?.touched)">
               <span *ngIf="sinupControls?.email?.errors['required']">
@@ -104,7 +104,7 @@
             </div>
           </div>
           <div>
-            <input type="number" class="number-input" required name="phone" formControlName="phone" id="signPhone"
+            <input autocomplete="off" type="number" class="number-input" required name="phone" formControlName="phone" id="signPhone"
               placeholder="Phone Number">
             <div class="errorMsg"
               *ngIf="sinupControls?.phone?.invalid && (!sinupControls?.phone?.dirty || sinupControls?.phone?.touched)">
@@ -118,7 +118,7 @@
             </div>
           </div>
           <div>
-            <input type="text" formControlName="section" required name="section" id="signSection" placeholder="Stream">
+            <input autocomplete="off" type="text" formControlName="section" required name="section" id="signSection" placeholder="Branch">
             <div class="errorMsg"
               *ngIf="sinupControls?.section?.invalid && (!sinupControls?.section?.dirty || sinupControls?.section?.touched)">
               <span *ngIf="sinupControls?.section?.errors['required']">
@@ -127,7 +127,7 @@
             </div>
           </div>
           <div>
-            <input type="text" formControlName="rollno" required name="rollno" id="signRoll" placeholder="Enrollment Number">
+            <input autocomplete="off" type="text" formControlName="rollno" required name="rollno" id="signRoll" placeholder="Enrollment Number">
             <div class="errorMsg"
               *ngIf="sinupControls?.rollno?.invalid && (!sinupControls?.rollno?.dirty || sinupControls?.rollno?.touched)">
               <span *ngIf="sinupControls?.rollno?.errors['required']">

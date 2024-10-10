@@ -16,28 +16,9 @@ main {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem;
 }
-
-//   .share {
-//     width: 4.5rem;
-//     height: 3rem;
-//     background-color: #f55e77;
-//     border: 0;
-//     border-bottom: 0.2rem solid #c0506a;
-//     border-radius: 2rem;
-//     cursor: pointer;
-//   }
-
-//   .share:active {
-//     border-bottom: 0;
-//   }
-
-//   .share i {
-//     color: #fff;
-//     font-size: 2rem;
-//   }
 
 h1 {
   font-family: "Rubik", sans-serif;
@@ -45,12 +26,14 @@ h1 {
   color: #141a39;
   text-transform: uppercase;
   cursor: default;
+  text-align: center;
+  font-size: 35px;
 }
 
 #leaderboard {
   width: 100%;
   position: relative;
-  overflow: auto;
+  overflow-x: hidden;
   height: 400px;
 }
 
@@ -264,6 +247,7 @@ td, th {
   background-color: #fff;
   border-radius: 2rem;
   cursor: pointer;
+  border: 1px solid black;
 }
 
 .exit:hover {
