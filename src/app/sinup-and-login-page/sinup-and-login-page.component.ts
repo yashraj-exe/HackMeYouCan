@@ -136,7 +136,7 @@ export class SinupAndLoginPageComponent implements OnInit {
         this.message = res?.message;
         setTimeout(() => {
           this.router.navigateByUrl(`wel-come/congratulation/${res?.message}`);
-        }, 5000);
+        }, 1500);
       } else {
         this.myFunction("error");
         this.message = res?.message;
